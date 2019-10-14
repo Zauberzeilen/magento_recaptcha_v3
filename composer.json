@@ -1,0 +1,11 @@
+{
+  "name": "zauberzeilen/magento_recaptcha_v3",
+  "type": "magento-module",
+  "description": "Spam protection module for various forms using Google ReCaptchaV3.",
+  "homepage": "https://github.com/Zauberzeilen/magento_recaptcha_v3",
+  "license": "OSL-3.0",
+  "require": {
+    "php": ">=5.4",
+    "magento-hackathon/magento-composer-installer": "*"
+  }
+}

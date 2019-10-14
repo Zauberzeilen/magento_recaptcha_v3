@@ -1,0 +1,4 @@
+app/code/community/Zauberzeilen/ReCaptcha app/code/community/Zauberzeilen/ReCaptcha
+app/design/frontend/base/default/template/zauberzeilen/recaptcha app/design/frontend/base/default/template/zauberzeilen/recaptcha
+app/design/frontend/base/default/layout/zauberzeilen_recaptcha.xml app/design/frontend/base/default/layout/zauberzeilen_recaptcha.xml
+app/etc/modules/Zauberzeilen_ReCaptcha.xml app/etc/modules/Zauberzeilen_ReCaptcha.xml

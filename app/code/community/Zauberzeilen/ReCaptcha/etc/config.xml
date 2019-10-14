@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @package   Zauberzeilen_ReCaptcha
+ * @author    Björn Rennfanz <bjoern@zauberzeilen.de>
+ * @copyright Copyright (c) 2019 Zauberzeilen - Ihr Webauftritt von A-Z (https://www.zauberzeilen.de)
+ * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @link      https://www.zauberzeilen.de
+ */
+-->
+<config>
+    <modules>
+        <Zauberzeilen_ReCaptcha>
+            <version>1.0.0</version>
+        </Zauberzeilen_ReCaptcha>
+    </modules>
+    <global>
+        <models>
+            <zauberzeilen_recaptcha>
+                <class>Zauberzeilen_ReCaptcha_Model</class>
+            </zauberzeilen_recaptcha>
+        </models>
+        <blocks>
+            <zauberzeilen_recaptcha>
+                <class>Zauberzeilen_ReCaptcha_Block</class>
+            </zauberzeilen_recaptcha>
+        </blocks>
+        <helpers>
+            <zauberzeilen_recaptcha>
+                <class>Zauberzeilen_ReCaptcha_Helper</class>
+            </zauberzeilen_recaptcha>
+        </helpers>
+    </global>
+    <frontend>
+        <events>
+            <controller_action_predispatch_customer_account_createpost>
+                <observers>
+                    <zauberzeilen_recaptcha>
+                        <class>zauberzeilen_recaptcha/observer</class>
+                        <method>controllerActionPredispatchCustomerAccountCreatepost</method>
+                    </zauberzeilen_recaptcha>
+                </observers>
+            </controller_action_predispatch_customer_account_createpost>
+
+            <controller_action_predispatch_review_product_post>
+                <observers>
+                    <zauberzeilen_recaptcha>
+                        <class>zauberzeilen_recaptcha/observer</class>
+                        <method>controllerActionPredispatchBlockReviewForm</method>
+                    </zauberzeilen_recaptcha>
+                </observers>
+            </controller_action_predispatch_review_product_post>
+
+            <controller_action_predispatch_customer_account_forgotpasswordpost>
+                <observers>
+                    <zauberzeilen_recaptcha>
+                        <class>zauberzeilen_recaptcha/observer</class>
+                        <method>controllerActionPredispatchCustomerAccountForgotPasswordPost</method>
+                    </zauberzeilen_recaptcha>
+                </observers>
+            </controller_action_predispatch_customer_account_forgotpasswordpost>
+
+            <controller_action_predispatch_contacts_index_post>
+                <observers>
+                    <zauberzeilen_recaptcha>
+                        <class>zauberzeilen_recaptcha/observer</class>
+                        <method>controllerActionPredispatchContactsIndexPost</method>
+                    </zauberzeilen_recaptcha>
+                </observers>
+            </controller_action_predispatch_contacts_index_post>
+
+            <controller_action_predispatch_newsletter_subscriber_new>
+                <observers>
+                    <zauberzeilen_recaptcha>
+                        <class>zauberzeilen_recaptcha/observer</class>
+                        <method>controllerActionPredispatchNewsletterSubscriberNew</method>
+                    </zauberzeilen_recaptcha>
+                </observers>
+            </controller_action_predispatch_newsletter_subscriber_new>
+        </events>
+        <layout>
+            <updates>
+                <zauberzeilen_recaptcha>
+                    <file>zauberzeilen_recaptcha.xml</file>
+                </zauberzeilen_recaptcha>
+            </updates>
+        </layout>
+        <routers>
+            <zauberzeilen_recaptcha>
+                <use>standard</use>
+                <args>
+                    <module>Zauberzeilen_ReCaptcha</module>
+                    <frontName>recaptcha</frontName>
+                </args>
+            </zauberzeilen_recaptcha>
+        </routers>
+    </frontend>
+    <default>
+        <zauberzeilen>
+            <recaptcha>
+                <enable>0</enable>
+                <enableLogging>0</enableLogging>
+                <logfile>recaptcha.log</logfile>
+            </recaptcha>
+        </zauberzeilen>
+    </default>
+</config>
